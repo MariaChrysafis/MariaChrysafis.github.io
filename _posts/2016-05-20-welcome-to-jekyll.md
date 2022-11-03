@@ -24,7 +24,8 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 $$ x = y^2 $$
 
 \begin{align}
-test &= x &= y
+test &= x \newline &= y
 \end{align}
 
-$ test $
+This is an inline $ test $
+
