@@ -78,6 +78,37 @@
 
 <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVEJcbkEoKDEpKS0tPkIoKDIpKVxuQS0tPkMoKDMpKVxuQS0tPkQoKDQpKVxuQi0tPkUoKDUpKVxuQi0tPkYoKDYpKVxuQi0tPkcoKDcpKVxuQy0tPkgoKDgpKVxuRC0tPkkoKDkpKVxuRC0tPkooKDEwKSlcbiUlLSIsIm1lcm1haWQiOm51bGx9"></p>
 
+<p>&lt;!DOCTYPE html&gt;</p>
+
+   
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+    
+	 
+
+ <pre><code class="language-mermaid">graph LR
+A--&gt;B
+</code></pre>
+
+<div class="mermaid">graph LR
+A--&gt;B
+</div>
+	
+
+<script>
+var config = {
+    startOnLoad:true,
+    theme: 'forest',
+    flowchart:{
+            useMaxWidth:false,
+            htmlLabels:true
+        }
+};
+mermaid.initialize(config);
+window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
+
+
+
   </div>
 <a class="u-url" href="/2016/05/20/treaps.html" hidden></a>
 </article>
