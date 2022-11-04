@@ -67,6 +67,24 @@
   <li>The value of a given node is smaller than the value of any other node in its subtree.</li>
 </ul>
 
+<center>
+<div class="mermaid">
+graph TD;
+    A((1))--&gt;B((2))
+    A--&gt;C((4))
+    B--&gt;D((5))
+    B--&gt;E((3))
+    C--&gt;F((8))
+    C--&gt;G((6))
+    D--&gt;H((7))
+</div>
+<font size="-2">
+<caption>
+An example of a min-heap.
+</caption>
+</font>
+</center>
+
 <p>We say that a binary tree satisfies the <strong>max-heap property</strong> if</p>
 
 <ul>
@@ -74,15 +92,26 @@
   <li>The value of a given node is larger than the value of any other node in its subtree.</li>
 </ul>
 
-<h2 id="inserting-elements-into-binary-heaps">Inserting Elements into Binary Heaps</h2>
-
+<center>
 <div class="mermaid">
 graph TD;
-    A--&gt;B;
-    A--&gt;C;
-    B--&gt;D;
-    C--&gt;D;
+    A((8))--&gt;B((4))
+    A--&gt;C((7))
+    B--&gt;D((2))
+    B--&gt;E((3))
+    C--&gt;F((6))
+    C--&gt;G((5))
+    D--&gt;H((1))
 </div>
+<font size="-2">
+<caption>
+An example of a max-heap.
+</caption>
+</font>
+</center>
+
+<h2 id="inserting-elements-into-binary-heaps">Inserting Elements into Binary Heaps</h2>
+
 
   </div>
 <a class="u-url" href="/2016/05/20/treaps.html" hidden></a>
