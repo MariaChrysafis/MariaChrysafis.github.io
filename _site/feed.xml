@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-03T18:49:59-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
-</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Binary Search Trees, Binary Heaps, and Treaps</title><link href="http://localhost:4000/2022/11/03/treaps.html" rel="alternate" type="text/html" title="Binary Search Trees, Binary Heaps, and Treaps" /><published>2022-11-03T00:00:00-07:00</published><updated>2022-11-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/03/treaps</id><content type="html" xml:base="http://localhost:4000/2022/11/03/treaps.html"><![CDATA[<h1 id="binary-heaps">Binary Heaps</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-06T17:07:12-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><author><name>GitHub User</name><email>your-email@domain.com</email></author><entry><title type="html">An Interesting Permutation Problem</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="An Interesting Permutation Problem" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<h1 id="binary-heaps">Binary Heaps</h1>
 <h2 id="definitions">Definitions</h2>
 <p>There are two types of binary heaps: min-heaps and max-heaps.</p>
 
@@ -66,28 +66,6 @@ graph TD;
     D--&gt;H((5))
 </div>
 <div class="mermaid" style="display:inline">
-graph TD
-    A((1))--&gt;B((3));
-    A--&gt;C((6));
-    B--&gt;D((4));
-    B--&gt;E((8));
-    C--&gt;F((7));
-    C--&gt;G((9));
-    D--&gt;H((5));
-    D--&gt;I((2));
-</div>
-<div class="mermaid" style="display:inline">
-graph TD;
-    A1((1))--&gt;B1((3))
-    A1--&gt;C1((6))
-    B1--&gt;D1((2))
-    B1--&gt;E1((8))
-    C1--&gt;F1((7))
-    C1--&gt;G1((9))
-    D1--&gt;H1((5))
-    D1--&gt;I1((4))
-</div>
-<div class="mermaid" style="display:inline">
 graph TD;
     A((1))--&gt;B((2))
     A--&gt;C((6))
@@ -128,4 +106,4 @@ graph TD;
 
 <h2 id="intersection">Intersection</h2>
 
-<h2 id="case-study-segment-tree">Case Study: Segment Tree</h2>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Binary Heaps Definitions There are two types of binary heaps: min-heaps and max-heaps.]]></summary></entry></feed>
+<h2 id="case-study-segment-tree">Case Study: Segment Tree</h2>]]></content><author><name>GitHub User</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[Binary Heaps Definitions There are two types of binary heaps: min-heaps and max-heaps.]]></summary></entry></feed>
