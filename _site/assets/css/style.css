@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .highlight .c { color: #998; font-style: italic; }
 
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
@@ -318,5 +319,15 @@ table td { border: 1px solid #e8e8e8; }
 
 /** Grid helpers */
 @media screen and (min-width: 800px) { .one-half { width: calc(50% - (30px / 2)); } }
+
+.claim { display: block; padding: 10px; font-style: italic; background-color: #d9f2ff; border-radius: 10px; border: 2px solid; }
+
+.claim:before { content: "Claim. "; font-weight: bold; font-style: normal; }
+
+.proof { display: block; padding: 10px; font-style: italic; background-color: #ebe8e8; border-radius: 10px; border: 2px solid; }
+
+.proof:before { content: "Proof. "; font-weight: bold; font-style: normal; }
+
+.proof:after { content: "❑"; font-weight: bold; font-style: normal; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-24T13:44:18-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-24T15:57:37-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
 </subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<p>Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures.</p>
 <h2 id="binary-search-trees">Binary Search Trees</h2>
 <p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
@@ -10,28 +10,22 @@
 <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p>
 <h3 id="adding-a-node">Adding a Node</h3>
 <h3 id="adding-a-node-complexity">Adding a Node Complexity</h3>
-<p>Suppose we have a random BST with $n$ nodes: that is, a BST built from a <em>random</em> permutation $p$ of $[n]$. Now, suppose further that we are searching for a node with some random value $x$ in the range $1…n$. What is the expected number of operations needed to find the node with the key $x$?</p>
+<p>Suppose we build a BST from a random permutation. Let $q(n)$ be the average number of nodes on the path from the root down to an arbitrary node in the BST.</p>
 
-<p>We know that the root of our tree is $p[0]$ and therefore, each root value is some random number from $1…n$.</p>
+<div class="claim">
+$q(n) \le 2 \cdot H_n$, where $H_n$ is the $n$th Harmonic number.
+</div>
 
-<p><strong>Claim:</strong> The expected number of queries $q(n)$ is $\le H_n$.</p>
-
-<p><strong>Proof:</strong> There is a $\frac{1}{n}$ chance that we only need one query, that is, a $\frac{1}{n}$ chance that $x = p[0]$.</p>
-
-<p>In the other case that $x \ne p[0]$:</p>
-<ul>
-  <li><strong>Case 1:</strong> $x &gt; p[0]$. We recurse down to the left subtree of $x$, which will have $x - 1$ elements: $1 \dots x - 1$.</li>
-  <li><strong>Case 2:</strong> $x &lt; p[0]$. We recurse down to the right subtree of $x$, which will have $n - x$ elements: $x + 1 \dots n$.
-Keeping this in mind, 
+<div class="proof">
 \begin{align}
 q(n) &amp;= 1 + \frac{1}{n^2} \sum_{x = 1}^n \left( \sum_{r = 1}^{x - 1} q(x - 1) + \sum_{r = x + 1}^n q(n - x) \right) \newline
 &amp;= 1 + \frac{1}{n^2} \sum_{x = 1}^n q(x - 1) \cdot (x - 1) + q(n - x) \cdot (n - x) \newline
 &amp;=  1 + \frac{2}{n^2} \sum_{x = 1}^{n - 1} q(x) \cdot x
 \end{align}
 There we have a recurrence relation.
-    <h4 id="more">More</h4>
-  </li>
-</ul>
+</div>
+
+<h4 id="more">More</h4>
 
 <h3 id="finding-the-kth-element">Finding the kth Element</h3>
 <p>It turns out that we can recursively find the $k$th smallest key (0-indexed) in our binary search tree in $\mathcal{O}(\text{depth})$, if we know the size of the subtrees at each node. To do so, consider the following algorithm:</p>

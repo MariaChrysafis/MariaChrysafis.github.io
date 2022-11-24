@@ -5,3 +5,36 @@
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
+
+.claim {
+    display: block;
+    padding: 10px;
+    font-style: italic;
+    background-color: rgb(217, 242, 255);
+    border-radius: 10px;
+    border:2px solid;
+}
+.claim:before {
+    content: "Claim. ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.proof {
+  display: block;
+  padding: 10px;
+  font-style: italic;
+  background-color: rgb(235, 232, 232);
+  border-radius: 10px;
+  border:2px solid;
+}
+.proof:before {
+  content: "Proof. ";
+  font-weight: bold;
+  font-style: normal;
+}
+.proof:after {
+  content: "❑";
+  font-weight: bold;
+  font-style: normal;
+}
