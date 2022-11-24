@@ -1,109 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-06T17:07:12-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><author><name>GitHub User</name><email>your-email@domain.com</email></author><entry><title type="html">An Interesting Permutation Problem</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="An Interesting Permutation Problem" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<h1 id="binary-heaps">Binary Heaps</h1>
-<h2 id="definitions">Definitions</h2>
-<p>There are two types of binary heaps: min-heaps and max-heaps.</p>
-
-<p>We say that a binary tree satisfies the <strong>min-heap property</strong> if</p>
-
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-24T13:44:18-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
+</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<p>Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures.</p>
+<h2 id="binary-search-trees">Binary Search Trees</h2>
+<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
 <ul>
-  <li>It is a complete binary tree.</li>
-  <li>The value of a given node is smaller than the value of any other node in its subtree.</li>
+  <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li>
+  <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
 </ul>
 
-<center>
-<div class="mermaid">
-graph TD;
-    A((1))--&gt;B((2))
-    A--&gt;C((4))
-    B--&gt;D((5))
-    B--&gt;E((3))
-    C--&gt;F((8))
-    C--&gt;G((6))
-    D--&gt;H((7))
-</div>
-<font size="-2">
-<caption>
-An example of a min-heap.
-</caption>
-</font>
-</center>
+<p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p>
+<h3 id="adding-a-node">Adding a Node</h3>
+<h3 id="adding-a-node-complexity">Adding a Node Complexity</h3>
+<p>Suppose we have a random BST with $n$ nodes: that is, a BST built from a <em>random</em> permutation $p$ of $[n]$. Now, suppose further that we are searching for a node with some random value $x$ in the range $1…n$. What is the expected number of operations needed to find the node with the key $x$?</p>
 
-<p>We say that a binary tree satisfies the <strong>max-heap property</strong> if</p>
+<p>We know that the root of our tree is $p[0]$ and therefore, each root value is some random number from $1…n$.</p>
 
+<p><strong>Claim:</strong> The expected number of queries $q(n)$ is $\le H_n$.</p>
+
+<p><strong>Proof:</strong> There is a $\frac{1}{n}$ chance that we only need one query, that is, a $\frac{1}{n}$ chance that $x = p[0]$.</p>
+
+<p>In the other case that $x \ne p[0]$:</p>
 <ul>
-  <li>It is a complete binary tree.</li>
-  <li>The value of a given node is larger than the value of any other node in its subtree.</li>
+  <li><strong>Case 1:</strong> $x &gt; p[0]$. We recurse down to the left subtree of $x$, which will have $x - 1$ elements: $1 \dots x - 1$.</li>
+  <li><strong>Case 2:</strong> $x &lt; p[0]$. We recurse down to the right subtree of $x$, which will have $n - x$ elements: $x + 1 \dots n$.
+Keeping this in mind, 
+\begin{align}
+q(n) &amp;= 1 + \frac{1}{n^2} \sum_{x = 1}^n \left( \sum_{r = 1}^{x - 1} q(x - 1) + \sum_{r = x + 1}^n q(n - x) \right) \newline
+&amp;= 1 + \frac{1}{n^2} \sum_{x = 1}^n q(x - 1) \cdot (x - 1) + q(n - x) \cdot (n - x) \newline
+&amp;=  1 + \frac{2}{n^2} \sum_{x = 1}^{n - 1} q(x) \cdot x
+\end{align}
+There we have a recurrence relation.
+    <h4 id="more">More</h4>
+  </li>
 </ul>
 
-<center>
-<div class="mermaid">
-graph TD;
-    A((8))--&gt;B((4))
-    A--&gt;C((7))
-    B--&gt;D((2))
-    B--&gt;E((3))
-    C--&gt;F((6))
-    C--&gt;G((5))
-    D--&gt;H((1))
-</div>
-<font size="-2">
-<caption>
-An example of a max-heap.
-</caption>
-</font>
-</center>
-
-<h2 id="inserting-elements-into-binary-heaps">Inserting Elements into Binary Heaps</h2>
-<center>
-<div class="mermaid" style="display:inline">
-graph TD;
-    A((1))--&gt;B((3))
-    A--&gt;C((6))
-    B--&gt;D((4))
-    B--&gt;E((8))
-    C--&gt;F((7))
-    C--&gt;G((9))
-    D--&gt;H((5))
-</div>
-<div class="mermaid" style="display:inline">
-graph TD;
-    A((1))--&gt;B((2))
-    A--&gt;C((6))
-    B--&gt;D((3))
-    B--&gt;E((8))
-    C--&gt;F((7))
-    C--&gt;G((9))
-    D--&gt;H((5))
-    D--&gt;I((4))
-</div>
-</center>
-
-<h2 id="deleting-root-element-from-binary-heaps">Deleting Root Element from Binary Heaps</h2>
-
-<h1 id="binary-search-trees">Binary Search Trees</h1>
-
-<h2 id="definitions-1">Definitions</h2>
-
-<h2 id="searching">Searching</h2>
-
-<h2 id="insertion">Insertion</h2>
-
-<h2 id="deletion">Deletion</h2>
-
-<h2 id="average-height">Average Height</h2>
-
-<h1 id="treaps">Treaps</h1>
-
-<h2 id="insertion-1">Insertion</h2>
-
-<h2 id="searching-1">Searching</h2>
-
-<h2 id="deletion-1">Deletion</h2>
-
-<h2 id="building">Building</h2>
-
-<h2 id="union">Union</h2>
-
-<h2 id="intersection">Intersection</h2>
-
-<h2 id="case-study-segment-tree">Case Study: Segment Tree</h2>]]></content><author><name>GitHub User</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[Binary Heaps Definitions There are two types of binary heaps: min-heaps and max-heaps.]]></summary></entry></feed>
+<h3 id="finding-the-kth-element">Finding the kth Element</h3>
+<p>It turns out that we can recursively find the $k$th smallest key (0-indexed) in our binary search tree in $\mathcal{O}(\text{depth})$, if we know the size of the subtrees at each node. To do so, consider the following algorithm:</p>
+<ul>
+  <li>Initialize our current node <code class="language-plaintext highlighter-rouge">cur</code> to be the tree’s root.</li>
+  <li>If the subtree size of the left child of <code class="language-plaintext highlighter-rouge">cur</code> is less than $k$, then we know that the $k$th smallest element lies in the left subtree of <code class="language-plaintext highlighter-rouge">cur</code>, so we can recurse to <code class="language-plaintext highlighter-rouge">cur = cur.left</code>.</li>
+  <li>If the subtree size of the left child of <code class="language-plaintext highlighter-rouge">cur</code> is equal to $k$, then we know that our current node has the $k$th smallest key. Return <code class="language-plaintext highlighter-rouge">cur</code>.</li>
+  <li>If the subtree size of the right child of <code class="language-plaintext highlighter-rouge">cur</code> is greater than $k$, then we know that the $k$th smallest element is in the right subtree of <code class="language-plaintext highlighter-rouge">cur</code>. Thus, we can recursive to <code class="language-plaintext highlighter-rouge">cur = cur.right</code> and set $k = k - 1$ - <code class="language-plaintext highlighter-rouge">cur.right.size</code>.</li>
+</ul>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures. Binary Search Trees Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.]]></summary></entry></feed>
