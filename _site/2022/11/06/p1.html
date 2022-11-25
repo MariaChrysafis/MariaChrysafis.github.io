@@ -73,7 +73,6 @@
 <div class="claim">
 $q(n) \le 2 \cdot H_n$, where $H_n$ is the $n$th Harmonic number.
 </div>
-
 <div class="proof">
 \begin{align}
 q(n) &amp;= 1 + \frac{1}{n^2} \sum_{x = 1}^n \left( \sum_{r = 1}^{x - 1} q(x - 1) + \sum_{r = x + 1}^n q(n - x) \right) \newline
@@ -100,9 +99,9 @@ q(n) &amp;= 1 + \frac{2}{n^2} \sum_{x = 1}^{n - 1} q(x) \cdot x \newline
 from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
 </div>
 
-<h4 id="more">More</h4>
+<h3 id="removing-a-node">Removing a Node</h3>
 
-<h3 id="finding-the-kth-element">Finding the kth Element</h3>
+<h3 id="finding-the-kth-smallest-element">Finding the kth smallest element</h3>
 <p>It turns out that we can recursively find the $k$th smallest key (0-indexed) in our binary search tree in $\mathcal{O}(\text{depth})$, if we know the size of the subtrees at each node. To do so, consider the following algorithm:</p>
 <ul>
   <li>Initialize our current node <code class="language-plaintext highlighter-rouge">cur</code> to be the tree’s root.</li>
@@ -111,6 +110,12 @@ from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
   <li>If the subtree size of the right child of <code class="language-plaintext highlighter-rouge">cur</code> is greater than $k$, then we know that the $k$th smallest element is in the right subtree of <code class="language-plaintext highlighter-rouge">cur</code>. Thus, we can recursive to <code class="language-plaintext highlighter-rouge">cur = cur.right</code> and set $k = k - 1$ - <code class="language-plaintext highlighter-rouge">cur.right.size</code>.</li>
 </ul>
 
+<h3 id="problems">Problems</h3>
+<ul>
+  <li><a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">Kth Smallest Element in a BST</a></li>
+  <li>
+</li>
+</ul>
 
   </div>
 <a class="u-url" href="/2022/11/06/p1.html" hidden></a>
