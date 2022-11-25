@@ -80,7 +80,24 @@ q(n) &amp;= 1 + \frac{1}{n^2} \sum_{x = 1}^n \left( \sum_{r = 1}^{x - 1} q(x - 1
 &amp;= 1 + \frac{1}{n^2} \sum_{x = 1}^n q(x - 1) \cdot (x - 1) + q(n - x) \cdot (n - x) \newline
 &amp;=  1 + \frac{2}{n^2} \sum_{x = 1}^{n - 1} q(x) \cdot x
 \end{align}
-There we have a recurrence relation.
+With a recurrence relation for $q$ under our belt, the next natural step is to bound $q$.
+
+We will now prove using the method of mathematical induction that $q_n \le 2 \cdot H_n$. We can verify the base case, when $n = 1$, quite easily because $q_1 = 1 \le 2 \cdot H_1 = 2$. As for the inductive step:
+\begin{align}
+q(n) &amp;= 1 + \frac{2}{n^2} \sum_{x = 1}^{n - 1} q(x) \cdot x \newline
+&amp;\le 1 + \frac{2}{n^2} \sum_{x = 1}^{n - 1} 2 x H_x \newline
+&amp;= 1 + \frac{4}{n^2} \sum_{x = 1}^{n - 1} x \sum_{i = 1}^{x} \frac{1}{i} \newline
+&amp;= 1 + \frac{4}{n^2} \sum_{i = 1}^{n - 1} \sum_{x = i}^{n - 1} \frac{x}{i} \newline
+&amp;= 1 + \frac{4}{n^2} \sum_{i = 1}^{n - 1} \frac{1}{i} \sum_{x = i}^{n - 1} x \newline
+&amp;= 1 + \frac{4}{n^2} \sum_{i = 1}^{n - 1} \frac{1}{i} \left( \binom{n}{2} - \binom{i}{2} \right) \newline
+&amp;= 1 + \frac{4}{n^2} \binom{n}{2} H_{n - 1} - \frac{4}{n^2}\sum_{i = 1}^{n - 1} \frac{1}{i} \binom{i}{2} \newline
+&amp;= 1 + \frac{2 (n - 1)}{n} H_{n - 1} - \sum_{i = 1}^{n - 1} \frac{i - 1}{2} \newline
+&amp;= 1 + 2H_{n - 1} - \frac{2}{n} H_{n - 1} - \frac{2\binom{n - 1}{2}}{n^2} \newline
+&amp;= 1 + 2H_{n - 1} - \frac{2}{n} H_{n - 1} - \frac{n - 1}{n} \newline
+&amp;= \frac{1}{n} + 2H_{n - 1} - \frac{2}{n} H_{n - 1} \newline
+&amp;\le 2H_n,
+\end{align}
+from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
 </div>
 
 <h4 id="more">More</h4>
