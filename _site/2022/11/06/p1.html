@@ -67,6 +67,7 @@
 
 <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p>
 <h3 id="adding-a-node">Adding a Node</h3>
+
 <h3 id="adding-a-node-complexity">Adding a Node Complexity</h3>
 <p>Suppose we build a BST from a random permutation. Let $q(n)$ be the average number of nodes on the path from the root down to an arbitrary node in the BST.</p>
 
@@ -101,6 +102,9 @@ from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
 
 <h3 id="removing-a-node">Removing a Node</h3>
 
+<h3 id="sample-problem-kth-smallest-element-in-bst">Sample Problem: Kth Smallest Element in BST</h3>
+<p>See <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/"> this LeetCode problem for the problem statement.</a></p>
+
 <h3 id="finding-the-kth-smallest-element">Finding the kth smallest element</h3>
 <p>It turns out that we can recursively find the $k$th smallest key (0-indexed) in our binary search tree in $\mathcal{O}(\text{depth})$, if we know the size of the subtrees at each node. To do so, consider the following algorithm:</p>
 <ul>
@@ -117,8 +121,40 @@ from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
 </li>
 </ul>
 
+<h1 id="treaps">Treaps</h1>
+<p>In a <strong>treap</strong>, each node has two values:</p>
+<ul>
+  <li>A a random <code class="language-plaintext highlighter-rouge">priority</code>.</li>
+  <li>A <code class="language-plaintext highlighter-rouge">value</code>.</li>
+</ul>
+
+<p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p>
+
   </div>
-<a class="u-url" href="/2022/11/06/p1.html" hidden></a>
+
+  <a class="u-url" href="/2022/11/06/p1.html" hidden></a>
+  
+  <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mariachrysafis1.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+  
 </article>
 
       </div>

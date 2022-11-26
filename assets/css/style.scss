@@ -12,6 +12,7 @@
     background-color: rgb(217, 242, 255);
     border-radius: 10px;
     border:2px solid;
+    box-shadow: 10px 10px black
 }
 .claim:before {
     content: "Claim. ";
@@ -25,6 +26,7 @@
   background-color: rgb(235, 232, 232);
   border-radius: 10px;
   border:2px solid;
+  box-shadow: 10px 10px;
 }
 .proof:before {
   content: "Proof. ";

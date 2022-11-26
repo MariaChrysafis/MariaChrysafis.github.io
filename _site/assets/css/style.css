@@ -181,9 +181,9 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .highlighter-rouge .highlight { background: #eeeeff; }
 
 /** Wrapper */
-.wrapper { max-width: calc(1500px - (30px)); margin-right: auto; margin-left: auto; padding-right: 15px; padding-left: 15px; }
+.wrapper { max-width: calc(1200px - (30px)); margin-right: auto; margin-left: auto; padding-right: 15px; padding-left: 15px; }
 
-@media screen and (min-width: 800px) { .wrapper { max-width: calc(1500px - (30px * 2)); padding-right: 30px; padding-left: 30px; } }
+@media screen and (min-width: 800px) { .wrapper { max-width: calc(1200px - (30px * 2)); padding-right: 30px; padding-left: 30px; } }
 
 /** Clearfix */
 .wrapper:after { content: ""; display: table; clear: both; }
@@ -320,11 +320,11 @@ table td { border: 1px solid #e8e8e8; }
 /** Grid helpers */
 @media screen and (min-width: 800px) { .one-half { width: calc(50% - (30px / 2)); } }
 
-.claim { display: block; padding: 10px; background-color: #d9f2ff; border-radius: 10px; border: 2px solid; }
+.claim { display: block; padding: 10px; background-color: #d9f2ff; border-radius: 10px; border: 2px solid; box-shadow: 10px 10px black; }
 
 .claim:before { content: "Claim. "; font-weight: bold; font-style: normal; }
 
-.proof { display: block; padding: 10px; background-color: #ebe8e8; border-radius: 10px; border: 2px solid; }
+.proof { display: block; padding: 10px; background-color: #ebe8e8; border-radius: 10px; border: 2px solid; box-shadow: 10px 10px; }
 
 .proof:before { content: "Proof. "; font-weight: bold; font-style: normal; }
 
