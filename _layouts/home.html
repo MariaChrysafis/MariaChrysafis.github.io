@@ -38,7 +38,7 @@ layout: default
           </a>
         </h3>
         {%- if true -%}
-          {{ post.excerpt }}
+        {{ post.content | truncatewords:100 }}
           <p align="right"><a style="text-align: width/10px;" href="{{ post.url | relative_url }}"> (Read more...) </a></p>
         {%- endif -%}
       </li>

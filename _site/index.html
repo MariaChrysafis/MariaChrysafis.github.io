@@ -24,6 +24,7 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Puzzles">
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <header class="site-header">
@@ -71,6 +72,8 @@
   <li>A <code class="language-plaintext highlighter-rouge">value</code>.</li>
 </ul>
 
+<p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p>
+
           <p align="right"><a style="text-align: width/10px;" href="/2022/11/07/p2.html"> (Read more...) </a></p>
 </li>
 <li>
@@ -80,13 +83,9 @@
             Binary Search Trees
           </a>
         </h3>
-<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
-<ul>
-  <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li>
-  <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
-</ul>
-
-          <p align="right"><a style="text-align: width/10px;" href="/2022/11/06/p1.html"> (Read more...) </a></p>
+<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p> <ul> <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li> <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li> </ul> <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p> <h3 id="adding-a-node">Adding a Node</h3> <h3 id="adding-a-node-complexity">Adding a Node Complexity</h3> <p>Suppose we build a BST from a random permutation. Let $q(n)$ be the average number of nodes on the...
+          </p>
+<p align="right"><a style="text-align: width/10px;" href="/2022/11/06/p1.html"> (Read more...) </a></p>
 </li>
 </ul>
 
