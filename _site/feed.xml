@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-26T08:24:25-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
-</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<p>Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures.</p>
-<h2 id="binary-search-trees">Binary Search Trees</h2>
-<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-26T09:10:10-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
+</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/07/p2.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-07T00:00:00-08:00</published><updated>2022-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/11/07/p2</id><content type="html" xml:base="http://localhost:4000/2022/11/07/p2.html"><![CDATA[<h1 id="treaps">Treaps</h1>
+<p>In a <strong>treap</strong>, each node has two values:</p>
+<ul>
+  <li>A a random <code class="language-plaintext highlighter-rouge">priority</code>.</li>
+  <li>A <code class="language-plaintext highlighter-rouge">value</code>.</li>
+</ul>
+
+<p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Treaps In a treap, each node has two values: A a random priority. A value.]]></summary></entry><entry><title type="html">Binary Search Trees</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="Binary Search Trees" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
 <ul>
   <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li>
   <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
@@ -60,13 +65,4 @@ from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
 <ul>
   <li><a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">Kth Smallest Element in a BST</a></li>
   <li></li>
-</ul>
-
-<h1 id="treaps">Treaps</h1>
-<p>In a <strong>treap</strong>, each node has two values:</p>
-<ul>
-  <li>A a random <code class="language-plaintext highlighter-rouge">priority</code>.</li>
-  <li>A <code class="language-plaintext highlighter-rouge">value</code>.</li>
-</ul>
-
-<p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures. Binary Search Trees Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.]]></summary></entry></feed>
+</ul>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.]]></summary></entry></feed>

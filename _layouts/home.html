@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+<style>
+  a.read-more {
+    text-align: right;
+    color: darkcyan;
+  }
+</style>
 
 <div class="home">
   {%- if page.title -%}
@@ -31,8 +37,9 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
-        {%- if site.show_excerpts -%}
+        {%- if true -%}
           {{ post.excerpt }}
+          <p align="right"><a style="text-align: width/10px;" href="{{ post.url | relative_url }}"> (Read more...) </a></p>
         {%- endif -%}
       </li>
       {%- endfor -%}

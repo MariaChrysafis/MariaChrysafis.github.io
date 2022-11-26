@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Treaps | Puzzles</title>
+<title>Binary Search Trees | Puzzles</title>
 <meta name="generator" content="Jekyll v4.3.1">
-<meta property="og:title" content="Treaps">
+<meta property="og:title" content="Binary Search Trees">
 <meta name="author" content="Maria Chrysafis">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures. Binary Search Trees Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.">
-<meta property="og:description" content="Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures. Binary Search Trees Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.">
+<meta name="description" content="Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.">
+<meta property="og:description" content="Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.">
 <link rel="canonical" href="http://localhost:4000/2022/11/06/p1.html">
 <meta property="og:url" content="http://localhost:4000/2022/11/06/p1.html">
 <meta property="og:site_name" content="Puzzles">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2022-11-06T00:00:00-07:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="Treaps">
+<meta property="twitter:title" content="Binary Search Trees">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Maria Chrysafis"},"dateModified":"2022-11-06T00:00:00-07:00","datePublished":"2022-11-06T00:00:00-07:00","description":"Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures. Binary Search Trees Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.","headline":"Treaps","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/11/06/p1.html"},"url":"http://localhost:4000/2022/11/06/p1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Maria Chrysafis"},"dateModified":"2022-11-06T00:00:00-07:00","datePublished":"2022-11-06T00:00:00-07:00","description":"Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.","headline":"Binary Search Trees","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/11/06/p1.html"},"url":"http://localhost:4000/2022/11/06/p1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Puzzles">
@@ -50,16 +50,14 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Treaps</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Binary Search Trees</h1>
     <p class="post-meta"><time class="dt-published" datetime="2022-11-06T00:00:00-07:00" itemprop="datePublished">
         Nov 6, 2022
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Treaps are an extremely powerful and perhaps underrated data structure. But before delving into what a treap can do, it is worth looking at binary search trees–arguably one of the simplest data structures.</p>
-<h2 id="binary-search-trees">Binary Search Trees</h2>
-<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
+    <p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
 <ul>
   <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li>
   <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
@@ -121,14 +119,6 @@ from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
 </li>
 </ul>
 
-<h1 id="treaps">Treaps</h1>
-<p>In a <strong>treap</strong>, each node has two values:</p>
-<ul>
-  <li>A a random <code class="language-plaintext highlighter-rouge">priority</code>.</li>
-  <li>A <code class="language-plaintext highlighter-rouge">value</code>.</li>
-</ul>
-
-<p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p>
 
   </div>
 
@@ -152,6 +142,7 @@ from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
     (d.head || d.body).appendChild(s);
     })();
 </script>
+
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
 </noscript>
   
