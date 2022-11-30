@@ -332,4 +332,18 @@ table td { border: 1px solid #e8e8e8; }
 
 .link { font-style: italic; color: red; }
 
+pre.highlight { padding: 8px 12px; position: relative; }
+
+pre.highlight > code { border: 0; overflow-x: auto; padding-right: 0; padding-left: 0; }
+
+pre.highlight.highlight { color: #c1c2c3; overflow: auto; white-space: pre; word-wrap: normal; }
+
+pre.highlight.highlight, pre.highlight.highlight code { font-size: 14px; }
+
+pre.highlight .copy { color: black; position: absolute; right: 1.2rem; top: 1.2rem; opacity: 0; }
+
+pre.highlight .copy:active, pre.highlight .copy:focus, pre.highlight .copy:hover { opacity: 1; }
+
+pre.highlight:active .copy, pre.highlight:focus .copy, pre.highlight:hover .copy { opacity: 1; }
+
 /*# sourceMappingURL=style.css.map */

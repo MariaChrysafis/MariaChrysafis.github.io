@@ -42,3 +42,49 @@
   font-style: italic;
   color: red;
 }
+
+pre.highlight {
+  padding: 8px 12px;
+  position: relative;
+
+  // override skeleton styles
+  > code {
+    border: 0;
+    overflow-x: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &.highlight {
+    color: #c1c2c3;
+    overflow: auto;
+    white-space: pre;
+    word-wrap: normal;
+
+    &,
+    code {
+      font-size: 14px;
+    }
+  }
+
+  // copy code to clipboard
+  .copy {
+    color: black;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    opacity: 0;
+
+    &:active,
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:active .copy,
+  &:focus .copy,
+  &:hover .copy {
+    opacity: 1;
+  }
+}
