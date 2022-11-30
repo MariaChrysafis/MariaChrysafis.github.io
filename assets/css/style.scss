@@ -46,7 +46,6 @@
 pre.highlight {
   padding: 8px 12px;
   position: relative;
-
   // override skeleton styles
   > code {
     border: 0;
@@ -60,11 +59,6 @@ pre.highlight {
     overflow: auto;
     white-space: pre;
     word-wrap: normal;
-
-    &,
-    code {
-      font-size: 14px;
-    }
   }
 
   // copy code to clipboard
