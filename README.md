@@ -1,4 +1,4 @@
-[Personal Blog](MariaChrysafis.github.io)
+# [Personal Blog](https://MariaChrysafis.github.io)
 
 Stuff:
 - Latex Support with MathJax
