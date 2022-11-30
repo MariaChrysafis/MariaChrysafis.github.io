@@ -65,12 +65,18 @@
   <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
 </ul>
 
-<pre><code class="language-mermaid">  graph TD;
-      A--&gt;B;
-      A--&gt;C;
-      B--&gt;D;
-      C--&gt;D;
-</code></pre>
+<div class="mermaid" align="center">
+graph TB;
+  subgraph Binary Search Tree
+    A((5))--&gt;B((4))
+    A--&gt;C((7));
+    B--&gt;E((2))
+    E--&gt;P((1))
+    E--&gt;Q((3))
+    B--&gt;F((5))
+    C--&gt;H((6))
+  end
+</div>
 
 <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p>
 <h3 id="adding-a-node">Adding a Node</h3>

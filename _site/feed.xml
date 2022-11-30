@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-30T11:33:25-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-30T11:49:26-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
 </subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/07/p2.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-07T00:00:00-08:00</published><updated>2022-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/11/07/p2</id><content type="html" xml:base="http://localhost:4000/2022/11/07/p2.html"><![CDATA[<h1 id="binary-search-trees">Binary Search Trees</h1>
 <p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
 <ul>
@@ -6,12 +6,18 @@
   <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
 </ul>
 
-<pre><code class="language-mermaid">  graph TD;
-      A--&gt;B;
-      A--&gt;C;
-      B--&gt;D;
-      C--&gt;D;
-</code></pre>
+<div class="mermaid" align="center">
+graph TB;
+  subgraph Binary Search Tree
+    A((5))--&gt;B((4))
+    A--&gt;C((7));
+    B--&gt;E((2))
+    E--&gt;P((1))
+    E--&gt;Q((3))
+    B--&gt;F((5))
+    C--&gt;H((6))
+  end
+</div>
 
 <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p>
 <h3 id="adding-a-node">Adding a Node</h3>
