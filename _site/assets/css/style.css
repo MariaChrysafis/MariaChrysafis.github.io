@@ -338,7 +338,7 @@ pre.highlight > code { border: 0; overflow-x: auto; padding-right: 0; padding-le
 
 pre.highlight.highlight { color: #c1c2c3; overflow: auto; white-space: pre; word-wrap: normal; }
 
-pre.highlight .copy { color: black; position: absolute; right: 1.2rem; top: 1.2rem; opacity: 0; }
+pre.highlight .copy { font-weight: 200; border-radius: 3px; padding: 6px 12px; border: 0; font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace; color: #3a4149; background: #e7ebee; line-height: 1.15; position: absolute; right: 1.2rem; top: 1.2rem; opacity: 0; }
 
 pre.highlight .copy:active, pre.highlight .copy:focus, pre.highlight .copy:hover { opacity: 1; }
 

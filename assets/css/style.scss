@@ -63,7 +63,14 @@ pre.highlight {
 
   // copy code to clipboard
   .copy {
-    color: black;
+    font-weight: 200;
+    border-radius: 3px;
+    padding: 6px 12px;
+    border: 0;
+    font-family: $code-font-family;
+    color: #3a4149;
+    background: #e7ebee;
+    line-height: 1.15;
     position: absolute;
     right: 1.2rem;
     top: 1.2rem;
