@@ -66,11 +66,13 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (5.0.0)
+    pygments.rb (2.3.0)
     racc (1.6.0)
     rainbow (3.1.1)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redcarpet (3.5.1)
     rexml (3.2.5)
     rouge (4.0.0)
     safe_yaml (1.0.5)
@@ -88,6 +90,8 @@ DEPENDENCIES
   bundler
   jekyll-spaceship
   minima!
+  pygments.rb
+  redcarpet
 
 BUNDLED WITH
    2.3.7

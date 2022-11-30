@@ -1,12 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-26T09:12:47-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
-</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/07/p2.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-07T00:00:00-08:00</published><updated>2022-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/11/07/p2</id><content type="html" xml:base="http://localhost:4000/2022/11/07/p2.html"><![CDATA[<h1 id="treaps">Treaps</h1>
-<p>In a <strong>treap</strong>, each node has two values:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-29T16:32:32-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
+</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/07/p2.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-07T00:00:00-08:00</published><updated>2022-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/11/07/p2</id><content type="html" xml:base="http://localhost:4000/2022/11/07/p2.html"><![CDATA[<p>In a <strong>treap</strong>, each node has two values:</p>
 <ul>
   <li>A a random <code class="language-plaintext highlighter-rouge">priority</code>.</li>
   <li>A <code class="language-plaintext highlighter-rouge">value</code>.</li>
 </ul>
 
-<p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Treaps In a treap, each node has two values: A a random priority. A value.]]></summary></entry><entry><title type="html">Binary Search Trees</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="Binary Search Trees" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
+<p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p>
+
+<p>There are two simple, yet powerful, operations treaps can do: splitting and merging.</p>
+<ul>
+  <li>For any value $x$, you can split a treap into two treaps: one with keys $\le x$ and another with keys $&gt; x$.</li>
+  <li>If all keys in one treap are strictly smaller than all keys in another treap, then we can merge those two treaps.</li>
+</ul>
+
+<p>The worst case time complexity for both of these operations is $\mathcal{O}(N)$, but on average, they run in $\mathcal{O}(\log N)$, making them extremely fast in practice.</p>
+
+<h1 id="splitting">Splitting</h1>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*</span><span class="p">,</span> <span class="n">Node</span><span class="o">*&gt;</span> <span class="n">split</span> <span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//&lt;= x and &gt;= x</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">make_pair</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="nb">nullptr</span><span class="p">);</span>
+        <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+        <span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+        <span class="n">update</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">make_pair</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">make_pair</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
+        <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+        <span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">update</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">make_pair</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">code</span>
+</code></pre></div></div>
+
+<h1 id="merging">Merging</h1>
+
+<h1 id="uses">Uses</h1>
+<h2 id="reversal">Reversal</h2>
+<h2 id="range-updates">Range Updates</h2>
+<h2 id="cut-and-paste">Cut and Paste</h2>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[In a treap, each node has two values: A a random priority. A value.]]></summary></entry><entry><title type="html">Binary Search Trees</title><link href="http://localhost:4000/2022/11/06/p1.html" rel="alternate" type="text/html" title="Binary Search Trees" /><published>2022-11-06T00:00:00-07:00</published><updated>2022-11-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/11/06/p1</id><content type="html" xml:base="http://localhost:4000/2022/11/06/p1.html"><![CDATA[<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
 <ul>
   <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li>
   <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
