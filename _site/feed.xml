@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-30T11:49:26-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
-</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps</title><link href="http://localhost:4000/2022/11/07/p2.html" rel="alternate" type="text/html" title="Treaps" /><published>2022-11-07T00:00:00-08:00</published><updated>2022-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/11/07/p2</id><content type="html" xml:base="http://localhost:4000/2022/11/07/p2.html"><![CDATA[<h1 id="binary-search-trees">Binary Search Trees</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-30T12:13:03-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Puzzles</title><subtitle>Puzzles of all sorts...related to math, computer science, and other musings!
+</subtitle><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><entry><title type="html">Treaps–A More Flexible Segment Tree</title><link href="http://localhost:4000/2022/11/07/p2.html" rel="alternate" type="text/html" title="Treaps–A More Flexible Segment Tree" /><published>2022-11-07T00:00:00-08:00</published><updated>2022-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/11/07/p2</id><content type="html" xml:base="http://localhost:4000/2022/11/07/p2.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<p><em>Why</em> should I actually care about Treaps in the first place? The short answer is that they can do <strong>a lot</strong>:</p>
+<ul>
+  <li>Not only can they do everything a normal Segment Tree can do, but they can also mimic lazy propagation.</li>
+  <li>They can do some things Segment Trees cannot do, like reversing ranges of elements.</li>
+  <li>They are much easier to understand, implement, and modify than Segment Trees are.</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>I want this tutorial to be as acessible as possible, so in the same page, I also explained the two prerequisites for treaps: Binary Search Trees (BSTs) and Min/Max Heaps. Feel free to skim or skip these two sections if you already know what BSTs and heaps are. There are some proofs there too, which aren’t necessary for understanding BSTs or Max/Heaps, but you can read them just for fun, if you want.</p>
+<h1 id="binary-search-trees">Binary Search Trees</h1>
 <p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p>
 <ul>
   <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li>
-  <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li>
+  <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.
+An example of a binary search tree is shown below:</li>
 </ul>
-
 <div class="mermaid" align="center">
 graph TB;
-  subgraph Binary Search Tree
     A((5))--&gt;B((4))
     A--&gt;C((7));
     B--&gt;E((2))
@@ -16,7 +25,7 @@ graph TB;
     E--&gt;Q((3))
     B--&gt;F((5))
     C--&gt;H((6))
-  end
+    C--&gt;R((8))
 </div>
 
 <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p>
@@ -173,4 +182,4 @@ from which it follows that indeed $q(n) \le 2 \cdot H_n$ by induction.
 
 <div class="lineComment">
 Like this
-</div>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Binary Search Trees Binary search trees are nothing more than special binary trees that satisfy what’s called the binary search tree property: The keys in a node’s left subtree is strictly smaller than the key of the node itself. The keys in a node’s right subtree is strictly larger than the key of the node itself.]]></summary></entry></feed>
+</div>]]></content><author><name>Maria Chrysafis</name><email>maria.chrysafis.junior@gmail.com</email></author><summary type="html"><![CDATA[Introduction Why should I actually care about Treaps in the first place? The short answer is that they can do a lot: Not only can they do everything a normal Segment Tree can do, but they can also mimic lazy propagation. They can do some things Segment Trees cannot do, like reversing ranges of elements. They are much easier to understand, implement, and modify than Segment Trees are.]]></summary></entry></feed>
