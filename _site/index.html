@@ -25,7 +25,6 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Puzzles">
 <link rel="stylesheet" href="/css/syntax.css">
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <header class="site-header">
@@ -58,29 +57,17 @@
 
 
 
-  <ul class="post-list">
-<li>
+  <ul class="post-list"><li>
         <span class="post-meta">Nov 7, 2022</span>
         <h3>
           <a class="post-link" href="/2022/11/07/p2.html">
             Treaps
           </a>
         </h3>
-<p>In a <strong>treap</strong>, each node has two values:</p> <ul> <li>A a random <code class="language-plaintext highlighter-rouge">priority</code>.</li> <li>A <code class="language-plaintext highlighter-rouge">value</code>.</li> </ul> <p>The values in a treap satisfy the binary search property, and the priorities in a treap satisfy the min-heap property.</p> <p>There are two simple, yet powerful, operations treaps can do: splitting and merging.</p> <ul> <li>For any value $x$, you can split a treap into two treaps: one with keys $\le x$ and another with keys $&gt; x$.</li> <li>If all keys in one treap are strictly smaller than all keys in another treap, then we can merge those two treaps.</li> </ul>...
-          <p align="right"><a style="text-align: width/10px;" href="/2022/11/07/p2.html"> (Read more...) </a></p>
-</li>
-<li>
-        <span class="post-meta">Nov 6, 2022</span>
-        <h3>
-          <a class="post-link" href="/2022/11/06/p1.html">
-            Binary Search Trees
-          </a>
-        </h3>
-<p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p> <ul> <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li> <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li> </ul> <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p> <h3 id="adding-a-node">Adding a Node</h3> <h3 id="adding-a-node-complexity">Adding a Node Complexity</h3> <p>Suppose we build a BST from a random permutation. Let $q(n)$ be the average number of nodes on the...
+<h1 id="binary-search-trees">Binary Search Trees</h1> <p>Binary search trees are nothing more than <em>special</em> binary trees that satisfy what’s called the <strong>binary search tree property</strong>:</p> <ul> <li>The keys in a node’s <strong>left</strong> subtree is strictly <strong>smaller</strong> than the key of the node itself.</li> <li>The keys in a node’s <strong>right</strong> subtree is strictly <strong>larger</strong> than the key of the node itself.</li> </ul> <pre><code class="language-mermaid"> graph TD; A--&gt;B; A--&gt;C; B--&gt;D; C--&gt;D; </code></pre> <p>Perhaps at first, this may seem like a rather arbitrary definition. But indeed, it proves quite useful.</p> <h3 id="adding-a-node">Adding a Node</h3> <h3 id="adding-a-node-complexity">Adding a Node Complexity</h3> <p>Suppose we build a BST from...
           </p>
-<p align="right"><a style="text-align: width/10px;" href="/2022/11/06/p1.html"> (Read more...) </a></p>
-</li>
-</ul>
+<p align="right"><a style="text-align: width/10px;" href="/2022/11/07/p2.html"> (Read more...) </a></p>
+</li></ul>
 
     </div>
 
