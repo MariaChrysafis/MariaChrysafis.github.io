@@ -1,6 +1,6 @@
 [Personal Blog](MariaChrysafis.github.io)
 
-Fast Facts:
+Stuff:
 - Latex Support with MathJax
 - Mermaid Diagram Rendering
 - Solarized Light Coding Scheme
